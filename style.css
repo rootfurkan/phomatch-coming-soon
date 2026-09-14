@@ -1,0 +1,91 @@
+:root {
+  color-scheme: dark;
+  background: #080e0c;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 280px;
+  background: radial-gradient(ellipse at 50% 48%, #10211b 0%, #0a120f 42%, #080c0b 80%);
+}
+
+main {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+  padding: 40px 24px;
+}
+
+.identity {
+  width: min(560px, 78vw);
+  text-align: center;
+}
+
+.logo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 6.22;
+  overflow: hidden;
+  /* White becomes black, which screen blending removes on the dark surface. */
+  mix-blend-mode: screen;
+}
+
+.logo img {
+  position: absolute;
+  width: 124.12%;
+  height: auto;
+  max-width: none;
+  left: -12.09%;
+  top: -108%;
+  filter: invert(1) hue-rotate(180deg);
+}
+
+h1 {
+  margin: 34px 0 0;
+  padding-left: 0.38em;
+  color: rgba(211, 231, 221, 0.62);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.38em;
+}
+
+.atmosphere {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(109, 202, 155, 0.23) 0%, rgba(54, 145, 108, 0.13) 24%, rgba(39, 112, 81, 0.045) 48%, transparent 72%);
+  filter: blur(48px);
+  transform: scale(1.65);
+}
+
+.orb-one { width: 330px; height: 330px; top: -115px; left: 13%; }
+.orb-two { width: 150px; height: 150px; top: 23%; left: 7%; }
+.orb-three { width: 260px; height: 260px; top: 10%; right: -60px; }
+.orb-four { width: 75px; height: 75px; top: 26%; right: 27%; opacity: 0.55; }
+.orb-five { width: 220px; height: 220px; bottom: 9%; left: -65px; }
+.orb-six { width: 100px; height: 100px; bottom: 15%; left: 36%; opacity: 0.55; }
+.orb-seven { width: 370px; height: 370px; bottom: -130px; right: 8%; }
+
+@media (max-width: 600px) {
+  .orb { filter: blur(32px); }
+  h1 { margin-top: 25px; font-size: 10px; }
+  .orb-one { width: 240px; height: 240px; left: -65px; top: -80px; }
+  .orb-two { width: 85px; height: 85px; left: 7%; top: 28%; }
+  .orb-three { width: 190px; height: 190px; right: -105px; top: 15%; }
+  .orb-four { width: 45px; height: 45px; right: 24%; top: 19%; }
+  .orb-five { width: 160px; height: 160px; bottom: 13%; }
+  .orb-six { width: 65px; height: 65px; left: 46%; bottom: 24%; }
+  .orb-seven { width: 260px; height: 260px; right: -90px; bottom: -75px; }
+}
